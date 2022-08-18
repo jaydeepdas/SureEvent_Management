@@ -1,0 +1,31 @@
+<template>
+    <template if:true={speaker}>
+      <lightning-layout vertical-align="center">
+        <lightning-layout-item>
+          <template if:true={speaker.Picture__c}>
+            <img src={speaker.Picture__c} alt="Profile photo" />
+          </template>
+          <template if:false={speaker.Picture__c}>
+            <img
+            src="https://www.pngitem.com/pimgs/m/41-414928_face-head-line-art-clip-and-white-symbol.png"
+              alt="Profile photo"
+            />
+          </template>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small">
+          <p>{speaker.Name}</p>
+          <p>
+            <lightning-formatted-email
+              value={speaker.Email}
+            ></lightning-formatted-email>
+          </p>
+          <p>
+            <lightning-formatted-phone
+              value={speaker.Phone}
+            ></lightning-formatted-phone>
+            
+          </p>
+        </lightning-layout-item>
+      </lightning-layout>
+    </template>
+  </template>

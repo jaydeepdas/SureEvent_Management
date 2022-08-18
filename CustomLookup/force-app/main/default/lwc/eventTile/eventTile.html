@@ -1,0 +1,21 @@
+<template>
+    <lightning-layout multiple-rows>
+      <lightning-layout-item size="3" padding="around-small">
+        <p>
+          {event.Name__c}
+        </p>
+        <p>
+          {event.EVNT_ORG}
+        </p>
+        <p>
+          {event.Location}
+        </p>
+      </lightning-layout-item>
+      <lightning-layout-item size="1" padding="around-small">
+      </lightning-layout-item>
+      <lightning-layout-item size="8" padding="around-small">
+        <lightning-formatted-rich-text value={event.Event_Detail__c}>
+        </lightning-formatted-rich-text>
+      </lightning-layout-item>
+    </lightning-layout>
+  </template>
